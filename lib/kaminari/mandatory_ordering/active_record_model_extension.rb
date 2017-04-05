@@ -4,7 +4,7 @@ module Kaminari
       extend ActiveSupport::Concern
 
       def self.prepended(klass)
-        return if Kaminari.config.disable_mandatory_ordering
+        return unless Kaminari.config.mandatory_ordering
 
         original = klass.method(Kaminari.config.page_method_name)
 

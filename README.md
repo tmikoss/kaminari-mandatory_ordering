@@ -24,7 +24,7 @@ Or install it yourself as:
 
 Look for `Kaminari::MandatoryOrdering::Error` exceptions, add order clauses to queries causing them.
 
-Disable (for example, in production environment) by setting `disable_mandatory_ordering = true` value in `kaminari` configuration block.
+Can be enabled / disabled by setting `mandatory_ordering` option in `kaminari` configuration (defaults to `true`).
 
 ## Development
 
