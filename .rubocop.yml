@@ -2,6 +2,7 @@ AllCops:
   TargetRubyVersion: 2.2
   Exclude:
     - spec/**/*
+    - gemfiles/**/*
 
 Metrics/LineLength:
   Max: 145
