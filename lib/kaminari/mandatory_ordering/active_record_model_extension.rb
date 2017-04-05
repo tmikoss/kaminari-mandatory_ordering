@@ -12,6 +12,7 @@ module Kaminari
           if all.values.fetch(:order, []).none?
             raise Kaminari::MandatoryOrdering::Error
           else
+            # TODO: Find out why calling `super` fails to find the previously defined method.
             original.call(number)
           end
         end
