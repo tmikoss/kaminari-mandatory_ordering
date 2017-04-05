@@ -16,3 +16,10 @@ gemfile:
 script:
   - bundle exec rake spec
   - bundle exec rubocop --display-cop-names
+
+cache: bundler
+
+matrix:
+  allow_failures:
+    - gemfile: gemfiles/active_record_edge.gemfile
+  fast_finish: true
