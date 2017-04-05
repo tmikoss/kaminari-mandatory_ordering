@@ -1,8 +1,8 @@
 # Kaminari::MandatoryOrdering
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kaminari/mandatory_ordering`. To experiment with that code, run `bin/console` for an interactive prompt.
+Makes sure ActiveRecord collections paged over by `kaminari` are ordered.
 
-TODO: Delete this and the text above, and describe your gem
+Forgetting to set order clause when loading records from database in pages can lead to duplicate or missing entries. This gem forces you not to make that mistake.
 
 ## Installation
 
@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Look for `Kaminari::MandatoryOrdering::Error` exceptions, add order clauses to queries causing them.
+
+Disable (for example, in production environment) by setting `disable_mandatory_ordering = true` value in `kaminari` configuration block.
 
 ## Development
 
@@ -32,5 +34,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/kaminari-mandatory_ordering.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tmikoss/kaminari-mandatory_ordering.
 

@@ -1,5 +1,6 @@
 module Kaminari
   module MandatoryOrdering
-    VERSION = '0.1.0'.freeze
+    class Error < RuntimeError
+    end
   end
 end
