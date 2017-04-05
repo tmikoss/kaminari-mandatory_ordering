@@ -1,4 +1,3 @@
-require 'kaminari'
 require 'kaminari/mandatory_ordering/version'
 require 'kaminari/mandatory_ordering/error'
 require 'kaminari/mandatory_ordering/active_record_extension'
