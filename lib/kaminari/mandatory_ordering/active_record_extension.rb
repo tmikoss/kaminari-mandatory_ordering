@@ -7,14 +7,14 @@ module Kaminari
 
       included do
         descendants.each do |klass|
-          klass.send(:prepend, Kaminari::MandatoryOrdering::ActiveRecordModelExtension)
+          klass.send(:include, Kaminari::MandatoryOrdering::ActiveRecordModelExtension) if klass.superclass == ::ActiveRecord::Base
         end
       end
 
       module ClassMethods
         def inherited(klass)
           super
-          klass.send(:prepend, Kaminari::MandatoryOrdering::ActiveRecordModelExtension)
+          klass.send(:include, Kaminari::MandatoryOrdering::ActiveRecordModelExtension) if klass.superclass == ::ActiveRecord::Base
         end
       end
     end
