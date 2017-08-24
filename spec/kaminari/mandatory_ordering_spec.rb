@@ -23,6 +23,11 @@ describe Kaminari::MandatoryOrdering do
     expect { klass.page(1) }.to raise_error(Kaminari::MandatoryOrdering::Error)
   end
 
+  it 'should raise error when paging unordered collection that does not directly inherit ActiveRecord' do
+    sublklass = Class.new(klass)
+    expect { sublklass.page(1) }.to raise_error(Kaminari::MandatoryOrdering::Error)
+  end
+
   it 'should not raise error when paging over ordered collection' do
     expect { klass.order(:id).page(1) }.not_to raise_error
   end
