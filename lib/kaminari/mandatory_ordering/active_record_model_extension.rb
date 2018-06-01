@@ -3,7 +3,7 @@ module Kaminari
     module ActiveRecordModelExtension
       extend ActiveSupport::Concern
       included do |base|
-        if Kaminari.config.mandatory_ordering
+        if Kaminari::MandatoryOrdering.enabled
           orig = base.method(Kaminari.config.page_method_name)
           base.define_singleton_method(Kaminari.config.page_method_name) do |num = nil|
             if all.values.fetch(:order, []).none?
