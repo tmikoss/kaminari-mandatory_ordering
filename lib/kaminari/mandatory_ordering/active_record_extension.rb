@@ -1,5 +1,3 @@
-require 'kaminari/mandatory_ordering/active_record_model_extension'
-
 module Kaminari
   module MandatoryOrdering
     module ActiveRecordExtension
@@ -11,7 +9,7 @@ module Kaminari
         end
       end
 
-      module ClassMethods
+      class_methods do
         def inherited(klass)
           super
           klass.send(:include, Kaminari::MandatoryOrdering::ActiveRecordModelExtension) if klass.superclass == ::ActiveRecord::Base

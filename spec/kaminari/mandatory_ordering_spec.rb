@@ -40,9 +40,9 @@ describe Kaminari::MandatoryOrdering do
 
   context 'when disabled' do
     around(:each) do |example|
-      Kaminari.configure { |config| config.mandatory_ordering = false }
+      Kaminari::MandatoryOrdering.enabled = false
       example.run
-      Kaminari.configure { |config| config.mandatory_ordering = true }
+      Kaminari::MandatoryOrdering.enabled = true
     end
 
     it 'should not raise error when paging unordered collection' do
