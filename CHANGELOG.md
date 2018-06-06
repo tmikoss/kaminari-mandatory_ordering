@@ -1,3 +1,7 @@
+# 0.2.2
+
+Make the configuration mechanism compatible with Kaminari 1.1.1
+
 # 0.2.1
 
 Change how paging method is overriden
